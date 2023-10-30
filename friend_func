@@ -33,3 +33,61 @@ int main ()
   
   return 0;
 }
+
+
+
+
+
+                               assignment prblm
+Create a class called Rectangle which has two private data members: length and width
+Implement the following methods:
+A constructor that initializes the length and width of the rectangle.
+A method to calculate and return the area of the rectangle.
+A method to calculate and return the perimeter of the rectangle.
+A friend function called isEqual that takes two Rectangle objects as parameters and returns true if they have the same area.
+
+
+#include <iostream>
+using namespace std;
+class Rectangle
+{
+  int length;
+  int width;
+  public:
+  Rectangle(int l,int w)
+  {
+    length=l;
+    width=w;
+  }
+  int area()
+  {
+    return (length*width);
+  }
+  friend bool isEqual( Rectangle &rect1 ,Rectangle &rect2);
+  int perimeter()
+  {
+    return 2*(length+width);
+  }
+};
+ bool isEqual(Rectangle &rect1,Rectangle&rect2)
+ {
+  return rect1.area()==rect2.area();
+ }
+
+int main(){
+ Rectangle rect1(5.0, 4.0);
+Rectangle rect2(3.0, 8.0);
+
+std::cout << "Area of Rectangle 1: " << rect1.area() << std::endl;
+    std::cout << "Perimeter of Rectangle 1: " << rect1.perimeter() << std::endl;
+
+    std::cout << "Area of Rectangle 2: " << rect2.area() << std::endl;
+    std::cout << "Perimeter of Rectangle 2: " << rect2.perimeter() << std::endl;
+    if (isEqual(rect1, rect2)) {
+        std::cout << "Rectangle 1 and Rectangle 2 have the same area." << std::endl;
+    } else {
+        std::cout << "Rectangle 1 and Rectangle 2 have different areas." << std::endl;
+    }
+
+  return 0;
+}
