@@ -1,0 +1,35 @@
+FRIEND FUNCTION:It is a non-memeber function of a class,which can access private and protected members of that class.
+  .Declaration of friend function should only within class and implementation  should be outside of the class.
+
+
+Why we need friend function?
+  .when class private data needs to accessed directly without using object of that class.
+
+
+
+ 
+#include <iostream>
+using namespace std;
+class Rec{
+   int l;
+    int b;
+    public:
+    Rec(int l,int b)
+    {
+        this->l=l;
+        this->b=b;
+    }
+    friend void  area_of_rec(Rec);//we can pass argument as class name
+};
+void area_of_rec(Rec o)
+{
+    cout<<"Area is:"<<(o.l*o.b)<<endl;
+}
+int main ()
+{
+    Rec obj(2,3);
+    area_of_rec(obj);
+    
+  
+  return 0;
+}
