@@ -103,6 +103,7 @@ def2 :
     .There is a situation,where two classess need to access a particular function,in such situtaions c++ made a function as friend function.
     .It can be called without using object of class.
     >friend function takes parameter as object of a class.
+    .It can be declared in public or private area of a class.
 
 
 Eg:
