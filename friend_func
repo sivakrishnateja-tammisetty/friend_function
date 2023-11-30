@@ -1,5 +1,5 @@
-FRIEND FUNCTION:It is a non-memeber function of a class,which can access private and protected members of that class.
-  .Declaration of friend function should only within class and implementation  should be outside of the class.
+def 1==> FRIEND FUNCTION:It is a non-memeber function of a class,which can access private and protected members of that class.
+        .Declaration of friend function should only within class and implementation  should be outside of the class.
 
 
 Why we need friend function?
@@ -90,4 +90,43 @@ std::cout << "Area of Rectangle 1: " << rect1.area() << std::endl;
     }
 
   return 0;
+}
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+def2 :
+
+* FRIEND FUNCTION USES:
+  .A non-member function doesn't have access to private data members of a class.
+  Why?
+    .There is a situation,where two classess need to access a particular function,in such situtaions c++ made a function as friend function.
+    .It can be called without using object of class.
+    >friend function takes parameter as object of a class.
+
+
+Eg:
+
+#include<iostream>
+#include<iomanip>
+using namespace std;
+class A{
+   int a,b;
+   friend void print(A obj);
+   public:
+   void set()
+   {
+    a=10,b=20;
+   }
+};
+void print(A obj)
+{
+    cout<<obj.a<<" "<<obj.b<<endl;
+}
+int main()
+{
+A obj;
+obj.set();
+print(obj);
+
 }
